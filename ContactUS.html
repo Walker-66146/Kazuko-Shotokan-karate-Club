@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="contact">
+    <header id="Navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Kazoku Shotokan Karate Dojyo Logo">
+        </div>
+        <li class ="club-name"><h1 class="navbar-H1">Kazuko Shotokan karate Club</h1></li>
+        <nav>
+            <ul>
+                <li><a href="Classes.html">Classes</a></li>
+                <li><a href="ContactUS.html">Contact</a></li>
+                <li><a href="WelcomePage.html">Home Page</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="contact-info">
+        <div class="contact-details">
+            <h2>Contact Information</h2>
+            <!-- Phone number -->
+            <p><strong>Phone:</strong> 604-0462</p>
+            <!-- Email address -->
+            <p><strong>Email:</strong><a style="text-decoration: none;" href="mailto:Kazokudojyo@gmail.com">Kazokudojyo@gmail.com</a></p>
+            <!-- Social media icons -->
+            <div class="social-media">
+                <a href="https://www.facebook.com/kazokudojyobelize" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/kazoku_shotokan_karate/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>            
+        </div>
+        <div class="practice-locations">
+            <h2>Practice Locations</h2>
+            <p>Main Branch -- <strong>San Ignacio:</strong>10th Awe Street <a href="https://maps.app.goo.gl/Y6jinLZCYY2qaBPr5" target="_blank" class="map-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </a></p>
+            <p>Sub Branch -- <strong>Benque Viejo:</strong> Cancha Marshallek <a href="https://maps.app.goo.gl/ScuTRhCtFaBb7hp78" target="_blank" class="map-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </a></p>
+        </div>
+    </section>
+    <section id="contact-form">
+        <h2>Interested in Joining?</h2>
+        <p>Fill out the form below, and we'll get back to you!</p>
+        <!-- Embed Google Form -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeDPn2LJCzJjwYaGyw7ujAc8efncB-Keg8Jug6dHa3cfGaGHA/viewform?embedded=true" width="640" height="914" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('Navbar');
+    
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+            if (scrollTop > lastScrollTop) {
+                // Scroll down: hide the navbar
+                navbar.classList.add('hide-navbar');
+            } else {
+                // Scroll up: show the navbar
+                navbar.classList.remove('hide-navbar');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        }, false);
+    </script>
+    
+    <script>
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
+    <script src="scripts.js"></script>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; EST Jan 09 -- Kazoku Shotokan Karate Club. All rights reserved.</p>
+            <p>Made by IT Tech Student</p>
+        </div>
+    </footer>
+</body>
+</html>
