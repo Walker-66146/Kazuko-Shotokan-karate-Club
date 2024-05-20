@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Set base font size to 16px, i can now do 1em = to 16px so i use em instead of px */
+
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Ensure the navigation stays above other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8a2be2;
+    padding: 0.1em 0.5em;
+    color: white;
+}
+.logo img {
+    height: 140px; /* Adjust the height to fit design */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between; /* Spread out the nav items */
+    padding: 0 1em; /* Add some padding to position items nicely */
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+nav ul li a:hover {
+    background-color: #c9a0dc;
+    border-radius: 5px;
+}
+/* Classes Page */
+body#classes {
+    background-color: #5bf1f1; /* Set background color for Classes page */
+}
+
+/* Welcome Page */
+body#welcome {
+    background-color: #c9a0dc; /* Set background color for Welcome page */
+}
+
+/* Contact Us Page */
+body#contact {
+    background-color: #5bf1f1; /* Set background color for Contact page */
+}
+/* Page-specific styles */
+#contact {
+    padding: 2em;
+    color: #333;
+}
+
+#classes {
+    padding: 2em;
+    color: #333;
+}
+
+#home {
+    padding: 2em;
+    color: #333;
+}
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    animation: bounce 20s linear infinite; /* Adjust duration as needed */
+    margin-right: -20px;  /*Add space in between images */
+}
+
+.carousel-slide img {
+    width: auto;
+    height: 200px;
+    margin-right: 20px; /* Add space between photos */
+
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(-10%);
+    }
+    50% {
+        transform: translateX(-20%);
+    }
+    75% {
+        transform: translateX(-10%);
+    }
+}
+
+@keyframes colorChange {
+    0% { background-color: #a0dcba; } /* A soft Green, Start color */
+    50% { background-color: #dcba00; } /* A warm Gold, Mid color */
+    100% { background-color: #87ceeb; } /* A rich Blue-Purple End color */
+}
+/* CSS for hiding the navbar */
+.hide-navbar {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Optional: Add a shadow or other styles when navbar is visible */
+#Navbar {
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.club-name{
+    margin-left: 18em;
+    list-style-type: none; /* Remove bullet points */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+.navbar-H1 {
+    margin: 0;
+    /* Apply animation to the background color of h1 */
+    animation: colorChange 5s infinite alternate; /* Apply animation to h1 */
+    /* Other styling for h1 */
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.description {
+    font-family: "Times New Roman", Times, serif; /* Set font family to Times New Roman */
+    font-size: 19px; /* Set font size to 13 pixels */
+    text-align: center;
+    margin-top: 20px;
+}
+/* Grid Gallery */
+.grid-gallery-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.grid-gallery {
+    --size: 100px;
+    display: grid;
+    grid-template-columns: repeat(6, var(--size));
+    grid-auto-rows: var(--size);
+    gap: 5px;
+    place-items: start center;
+    margin: 0 auto var(--size); /* Center the grid container horizontally */
+
+  }
+  .grid-gallery img {
+    width: calc(var(--size) * 2);
+    height: calc(var(--size) * 2);
+    object-fit: cover;
+    grid-column: auto / span 2;
+    border-radius: 5px;
+    clip-path: path("M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z"); 
+    transition: clip-path 0.25s, filter 0.75s;
+
+  }
+  .grid-gallery img:nth-child(5n - 1) { 
+    grid-column: 2 / span 2; 
+  }
+  .grid-gallery:has(img:hover) img:not(:hover) {
+    filter: brightness(0.5) contrast(0.5);
+  }
+  .grid-gallery img {
+    /* ... */
+    transition: clip-path 0.25s, filter 0.75s;
+  }
+  
+  .grid-gallery img:hover {
+    clip-path: path("M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z");
+    transition: clip-path 0.25s, filter 0.25s;
+    z-index: 1;
+  }
+  .grid-gallery a:focus {
+    outline: 1px dashed black;
+    outline-offset: -5px;
+  }
+
+  .call-to-action-btn {
+    background-color: #8a2be2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.call-to-action-btn:hover {
+    background-color: #6a1bb2;
+    cursor: pointer;
+}
+
+.social-media {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media p {
+    margin-right: 10px;
+}
+
+.facebook-link {
+    color: #3b5998;
+    font-size: 2em;
+}
+
+.facebook-link:hover {
+    color: #2d4373;
+}
+
+.classes-h1{
+    text-align: left;
+    margin-left: 8em;
+}
+
+.benefits-h2{
+    text-align: right;
+    margin-left: 5em;
+}
+
+.faqs-h2{
+    text-align: center;
+}
+.classes-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the top */
+}
+
+.class-schedule {
+    flex: 1; /* Take up remaining space */
+    margin: 15px; /* Add space between elements */
+}
+
+.class-schedule table {
+    width: auto;
+    border-collapse: collapse;
+}
+
+.class-schedule th, .class-schedule td {
+    border: 1px solid #ccc; /* Add border to table cells */
+    padding: 15px; /* Add padding for spacing */
+}
+
+.class-pricing {
+    width: 30%; /* Set width for the pricing section */
+    margin-top: 60px;
+    margin-right: 160px;
+}
+
+.pricing-h2 {
+    text-align: center;
+}
+
+.class-pricing ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove default left padding */
+}
+
+.class-pricing li {
+    margin-bottom: 10px; /* Add space between pricing entries */
+}
+
+.benefits-section {
+    display: flex;
+    margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+.benefits-image img {
+    margin-top: 50px;
+    width: 300px; /* Set width for the image */
+    margin-left: 200px; /* Add space between the image and text */
+}
+
+.benefits{
+    display: flex;
+    text-align: center;
+    justify-content: end;
+    align-items: right;
+    background-size: cover; /* Cover the entire container */
+    background-position: right; /* Position the image to the right */
+
+}
+
+.benefits ul {
+    list-style-type: none; /* Remove bullet points */
+    align-items: right;
+
+}
+
+.faqs {
+    /* Add styling for the FAQs section */
+    align-items: center;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd; /* Add border between accordion items */
+}
+
+.accordion-header {
+    background-color: #c4ed72; /* Add background color to accordion header */
+    padding: 10px; /* Add padding to accordion header */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.accordion-content {
+    display: none; /* Hide accordion content by default */
+    padding: 10px; /* Add padding to accordion content */
+}
+
+.accordion-item.active .accordion-content {
+    display: block; /* Display accordion content when active */
+}
+
+/* Contact information section */
+#contact-info {
+    background-color: #3fe29b; /* White background for contact info section */
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around; /* Center content horizontally */
+    align-items: flex-start; /* Align items at the top */
+}
+
+.contact-details, .practice-locations {
+    width: 45%; /* Set width for each section */
+}
+
+.contact-details h2, .practice-locations h2 {
+    margin-bottom: 1rem; /* Add space below section headings */
+}
+
+.contact-details p, .practice-locations p {
+    margin-bottom: 0.5rem; /* Add space below paragraphs */
+}
+
+.social-media {
+    margin-top: 1rem; /* Add space above social media icons */
+    display: flex; /* Display icons inline */
+    justify-content: center; /* Center the icons */
+}
+
+.social-icon {
+    margin-right: 1rem; /* Add space between social media icons */
+    font-size: 2.5rem; /* Set icon size */
+    color: #333; /* Default icon color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.social-icon:hover {
+    color: #8a2be2; /* Change color on hover */
+}
+
+.map-icon {
+    color: #8a2be2; /* Icon color */
+    margin-left: 0.5rem; /* Space between text and icon */
+    text-decoration: none; /* Remove underline */
+}
+
+.map-icon:hover {
+    color: #6a1bb2; /* Change color on hover */
+}
+
+.map-icon i {
+    font-size: 1.2rem; /* Adjust icon size */
+}
+
+/* Contact form section */
+#contact-form {
+    background-color: #4dbed2; /* White background for contact form section */
+    padding: 2rem;
+    margin-top: 2rem; /* Add space at the top */
+}
+
+#contact-form h2 {
+    margin-bottom: 1rem; /* Add space below heading */
+}
+
+#contact-form p {
+    margin-bottom: 2rem; /* Add space below paragraph */
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #contact-info {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .contact-details, .practice-locations {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 2rem; /* Add space between sections */
+    }
+}
+
+footer {
+    margin-top: 1em;
+    background-color: #8a2be2; /* Background color of the footer */
+    color: white; /* Text color of the footer */
+    padding: 1em 0; /* Padding around the footer content */
+    text-align: center; /* Center the text */
+    position: relative;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content p {
+    margin: 0.5em 0; /* Margin around the paragraph */
+}
